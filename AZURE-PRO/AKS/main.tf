@@ -2,7 +2,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = ">= 3.0"
+      version = "~> 4.0"
     }
   }
 }
@@ -55,5 +55,5 @@ module "aks" {
   docker_bridge_cidr         = var.docker_bridge_cidr
   log_analytics_workspace_id = module.log_analytics.workspace_id
   linux_admin_username       = var.linux_admin_username
-  ssh_public_key             = var.ssh_public_key
+  ssh_public_key             = trimspace(file(var.ssh_public_key))
 }

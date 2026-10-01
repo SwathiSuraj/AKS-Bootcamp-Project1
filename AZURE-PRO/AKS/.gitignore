@@ -9,3 +9,8 @@ crash.log
 /.idea/
 /.vscode/
 *.tfplan
+# SSH private/public keys
+*.pem
+y
+y.pub
+demoaks.pub
