@@ -55,5 +55,5 @@ module "aks" {
   docker_bridge_cidr         = var.docker_bridge_cidr
   log_analytics_workspace_id = module.log_analytics.workspace_id
   linux_admin_username       = var.linux_admin_username
-  ssh_public_key             = trimspace(file(var.ssh_public_key))
+  ssh_public_key             = trimspace(file("${path.module}/${var.ssh_public_key}"))
 }
